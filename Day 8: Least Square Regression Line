@@ -1,0 +1,16 @@
+import numpy as np
+n = 5
+z = np.array([list(map(int, input().split(" "))) for i in range(5)])
+x = np.asarray(z[:,0]).reshape(-1, 1)
+y = np.asarray(z[:,1]).reshape(-1,1)
+
+sumxs = sum([x[i]**2 for i in range(5)])
+sumxy = sum([x[i]*y[i] for i in range(5)])
+
+b = (n*sumxy - sum(x)*sum(y))/(n*sumxs - (sum(x))**2)
+a = sum(y)/n - b*(sum(x)/n)
+
+x1 = 80
+y1 = b*x1 + a
+
+print(round(y1[0],3))
