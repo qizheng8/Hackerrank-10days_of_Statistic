@@ -1,0 +1,19 @@
+#input data
+import numpy as np
+from sklearn import linear_model
+m,n = list(map(int, input().split(" ")))
+x = []
+y = []
+q = []
+z = np.array([list(map(float, input().split(" "))) for i in range(n)])
+x = np.asarray(z[:,0:1]).reshape(-1,1)
+y = np.asarray(z[:,2]).reshape(-1,1)
+n1 = int(input())
+q = np.array([list(map(float, input().split(" "))) for i in range(n1)])
+
+#calculate Y
+clf = linear_model.LinearRegression()
+clf.fit(x , y)
+y1 = clf.predict(q)
+for i in range(n1):
+    print(round(y1[i][0],2))
