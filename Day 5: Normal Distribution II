@@ -1,0 +1,9 @@
+import math
+u,s = list(map(int, input().split(" ")))
+n1 = int(input())
+n2 = int(input())
+def cdf(x):
+    return 1/2.0*(1+math.erf((x-u)/(s*math.sqrt(2))))
+print(round((1-cdf(80))*100,2))
+print(round((1-cdf(60))*100,2))
+print(round((cdf(60))*100,2))
