@@ -1,0 +1,5 @@
+import math
+p = float(input())
+x = float(input())
+y = ((p**x)*(math.exp(-p)))/math.factorial(x)
+print(round(y,3))
