@@ -1,0 +1,11 @@
+p, n = list(map(float, input().split(" ")))
+p = 0.01*p
+def fact(n):
+    return 1 if n == 0 else n*fact(n-1)
+def comb(n, x):
+    return fact(n) / (fact(x) * fact(n-x))
+def lala(p,n,x):
+    return comb(n,x)*(p**x)*((1-p)**(n-x))
+y1 = round(lala(p,n,2) + lala(p,n,1) + lala(p,n,0),3)
+y2 = round(1- lala(p,n,1)-lala(p,n,0), 3)
+print(y1, y2, sep = '\n')
