@@ -1,0 +1,17 @@
+n = int(input())
+X = [float(x) for x in input().split()]
+Y = [float(y) for y in input().split()]
+def rank(X,n):
+    tempt = dict((x,i+1) for i, x in enumerate(sorted(X)))
+    return [tempt[x] for x in X]
+        
+rx = rank(X,n)
+ry = rank(Y,n)
+
+def spearman(rx, ry, n):
+    ds = 0
+    for i in range(n):
+        ds = ds + (rx[i] - ry[i])**2
+    return 1 - (6*ds)/(n*(n**2 - 1))
+
+print(round(spearman(rx, ry, n), 3))
