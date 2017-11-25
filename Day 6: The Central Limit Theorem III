@@ -1,0 +1,12 @@
+import math
+n = float(input())
+u = float(input())
+s = float(input())
+p = float(input())
+z = float(input())
+
+A = -z*s/math.sqrt(n) + u
+B = z*s/math.sqrt(n) + u
+
+print(round(A, 2))
+print(round(B, 2))
