@@ -1,0 +1,27 @@
+from math import sqrt
+n = int(input())
+X = [float(x) for x in input().split()]
+Y = [float(y) for y in input().split()]
+def mean(X,n):
+    res = 0
+    for i in range(n):
+        res = X[i] + res
+    return res/n
+
+def std(X,n):
+    res = 0
+    for i in range(n):
+        res = (X[i] - mean(X,n))**2 + res
+    return sqrt(res/n)
+ux = mean(X,n)
+uy = mean(Y,n)
+sx = std(X,n)
+sy = std(Y,n)
+
+def pearson(X,Y,n):
+    res = 0
+    for i in range(n):
+        res = (X[i]-ux)*(Y[i]-uy) + res
+    return res/(n*sx*sy)
+
+print(round(pearson(X,Y,n),3))
