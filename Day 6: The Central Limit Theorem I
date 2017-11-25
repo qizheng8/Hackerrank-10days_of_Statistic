@@ -1,0 +1,13 @@
+import math
+m = int(input()) #maximum weight
+b = int(input()) #number of boxes
+u = int(input()) #mean weight of a cargo box
+s = int(input()) #standard deviation
+
+u1 = u*b
+s1 = s*math.sqrt(b)
+
+def cdf(x):
+    return 1/2.0*(1+math.erf((x-u1)/(s1*math.sqrt(2))))
+
+print(round(cdf(m),4))
