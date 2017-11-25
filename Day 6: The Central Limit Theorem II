@@ -1,0 +1,10 @@
+import math
+y = float(input())
+n = float(input())
+u = float(input())
+s = float(input())
+u1 = u*n
+s1 = s*math.sqrt(n)
+def cdf(x):
+    return 1/2.0*(1+math.erf((x-u1)/(s1*math.sqrt(2))))
+print(round(cdf(y),4))
