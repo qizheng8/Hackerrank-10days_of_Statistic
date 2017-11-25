@@ -1,0 +1,11 @@
+b, g = list(map(float, input().split(" ")))
+p = b/(b + g)
+n = 6
+def fact(n):
+    return 1 if n == 0 else n*fact(n-1)
+def comb(n, x):
+    return fact(n) / (fact(x) * fact(n-x))
+def lala(p,n,x):
+    return comb(n,x)*(p**x)*((1-p)**(n-x))
+y = round(lala(p,n,3) + lala(p,n,4) + lala(p,n,5) + lala(p,n,6),3)
+print(y)
