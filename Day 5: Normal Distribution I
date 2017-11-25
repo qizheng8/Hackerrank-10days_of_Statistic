@@ -1,0 +1,8 @@
+import math
+u,s = list(map(float, input().split(" ")))
+first = float(input())
+second1, second2 = list(map(float, input().split(" ")))
+def cdf(x):
+    return 1/2.0*(1+math.erf((x-u)/(s*math.sqrt(2))))
+print(round(cdf(19.5),3))
+print(round(cdf(22)-cdf(20),3))
