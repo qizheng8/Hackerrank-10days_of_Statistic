@@ -1,3 +1,4 @@
+[Day 0: Mean, Median, and Mode](https://www.google.com)
 import numpy as np
 from scipy import stats
 
